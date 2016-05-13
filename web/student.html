@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>student</title>
 </head>
 <body>
-爱上江东父老
+
+<form action="/WebRise/servlet/RegistrationServlet" method="get">
+    姓名：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    性别：
+    <input type="radio" name="sex" value="1">男
+    <input type="radio" name="sex" value="2">女<br>
+    婚否：<input type="checkbox" name="marry"><br>
+    业余爱好：
+    <input type="checkbox" name="hobby" value="eat">吃
+    <input type="checkbox" name="hobby" value="sleep">睡觉
+    <input type="checkbox" name="hobby" value="game">玩游戏<br>
+    描述：
+    <textarea name="description" rows="3" cols="30"></textarea><br>
+    故乡：
+    <select name="address">
+        <option value="bj"/>
+        北京
+        <option value="sh"/>
+        上海
+        <option value="hz"/>
+        杭州
+    </select><br>
+    <input type="hidden" name="id" value="40"><br>
+    <input type="submit" value="registration">
+
+
+</form>
 </body>
 </html>
