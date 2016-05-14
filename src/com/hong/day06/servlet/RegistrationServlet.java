@@ -20,7 +20,8 @@ public class RegistrationServlet extends HttpServlet {
         System.out.println(name);
 
         response.setContentType("text/html;charset=UTF-8");
-        response.getOutputStream().write(name.getBytes());
+        response.getOutputStream().write(name.getBytes("UTF-8"));
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
