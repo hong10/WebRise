@@ -16,7 +16,7 @@ import java.util.Date;
  * 通过cookie技术，获取用户上次访问时间
  * Created by hong on 2016/5/15.
  */
-@WebServlet(name = "CookieDemo1", urlPatterns = {"/"})
+@WebServlet(name = "CookieDemo1", urlPatterns = {"/cookie/CookieDemo1"})
 public class CookieDemo1 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
