@@ -25,7 +25,7 @@ public class ShowProductServlet extends HttpServlet {
         Map<String, Book> allBoos = BookDB.findAllBoos();
         for (Map.Entry<String, Book> entry : allBoos.entrySet()) {
             //bookName+ <a href='/WebRise/session/BuyProductServlet?id=bookName'/>购买</a><br/>
-            out.write(entry.getValue().getName() + "&nbsp;&nbsp;" + "<a href='" + request.getContextPath() + "/session/BuyProductServlet?id=" + entry.getKey() + "'/>购买</a><br/>");
+            out.write(entry.getValue().getName() + "&nbsp;&nbsp;" + "<a href='" + request.getContextPath() + "/session/BuyProductServlet?bookName=" + entry.getKey() + "'/>购买</a><br/>");
         }
 
         out.write("<hr/><a href='" + request.getContextPath() + "/session/ShowCartServlet'>查看购物车</a><br/>");
