@@ -24,6 +24,7 @@ public class BuyProductServlet extends HttpServlet {
 
         //1. getBookByName
         String name = request.getParameter("bookName");
+        System.out.println(name);
         Book book = BookDB.findBookByName(name);
 
         HttpSession session = request.getSession();

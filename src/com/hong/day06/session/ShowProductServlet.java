@@ -20,12 +20,12 @@ public class ShowProductServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
-        out.write("<br/><h1>最新上架的书籍：</h1>");
+        out.write("<br/><h1>最新上架的书籍：</h1><br/>");
         //get books
-        Map<String, Book> allBoos = BookDB.findAllBoos();
+        Map<String, Book> allBoos = BookDB.findAllBooks();
         for (Map.Entry<String, Book> entry : allBoos.entrySet()) {
             //bookName+ <a href='/WebRise/session/BuyProductServlet?id=bookName'/>购买</a><br/>
-            out.write(entry.getValue().getName() + "&nbsp;&nbsp;" + "<a href='" + request.getContextPath() + "/session/BuyProductServlet?bookName=" + entry.getKey() + "'/>购买</a><br/>");
+            out.write(entry.getValue().getName() + "&nbsp;&nbsp;<a href='" + request.getContextPath() + "/session/BuyProductServlet?bookName=" + entry.getKey() + "'/>购买</a><br/>");
         }
 
         out.write("<hr/><a href='" + request.getContextPath() + "/session/ShowCartServlet'>查看购物车</a><br/>");
