@@ -5,6 +5,7 @@ import com.hong.day06.domain.BookDB;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +31,19 @@ public class ShowAllBooksServlet extends HttpServlet {
         }
 
         out.write("<hr>浏览记录: <br/>");
+        Cookie[] cookies = request.getCookies();
+        for (int i = 0; cookies != null && i < cookies.length; i++) {
+            if ("bookHistory".equals(cookies[i].getName())) {
+                String ids = cookies[i].getValue();
+                String[] bookHistory = ids.split("\\-");
+                for (String id : bookHistory) {
+                    out.write(BookDB.findBookByName(id).getName() + "<br/>");
+                }
+
+                break;
+            }
+        }
+
 
     }
 
